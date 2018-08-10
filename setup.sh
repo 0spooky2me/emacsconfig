@@ -1,6 +1,8 @@
 #!/bin/bash
 
 cd "$(dirname "${BASH_SOURCE}")"
+CONFIG_LOCATION=`pwd`
+echo $CONFIG_LOCATION
 git pull origin master
 
 git_exit_code=$?
@@ -17,22 +19,22 @@ function clean() {
     fi
 }
 
-function copy_files() {
+function link_files() {
     for i in $(ls -a); do
-	if [ $i != '.' -a $i != '..' -a $i != '.git' -a $i != '.DS_Store' -a $i != `basename "$0"` -a $i != "README.md" -a $i != '.gitignore' -a $i != '.gitmodules' ]; then 
+	if [ $i != '.' -a $i != '..' -a $i != '.git' -a $i != '.DS_Store' -a $i != `basename "$0"` -a $i != "README.md" -a $i != '.gitignore' -a $i != '.gitmodules' ]; then
 	    echo "$i"
-	    cp -alrf "$i" "$HOME/"
+	    ln -s "$CONFIG_LOCATION/$i" "$HOME/$i"
 	fi
     done
 }
 
 clean
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
-    copy_files
+    link_files
 else
     read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-	copy_files
+	link_files
     fi
 fi
