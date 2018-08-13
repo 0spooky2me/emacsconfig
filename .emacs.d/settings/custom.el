@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(inhibit-startup-screen t)
- '(package-selected-packages (quote (ycmd)))
+ '(package-selected-packages (quote (use-package cquery lsp-mode)))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 (custom-set-faces
