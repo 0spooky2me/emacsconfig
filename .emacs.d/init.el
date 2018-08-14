@@ -14,10 +14,16 @@
 (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t))
 (package-initialize)
 
+(yas-global-mode 1)
+
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 (load
  (setq custom-file (expand-file-name "settings/custom.el" user-emacs-directory))
  'noerror)
 
+(use-package init-company)
+
 (use-package init-cquery)
+
+(use-package init-clang-format)

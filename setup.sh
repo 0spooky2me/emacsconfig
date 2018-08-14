@@ -58,7 +58,7 @@ get_cquery_location() {
 clone_build_cquery() {
     if [[ ! -d "$1" ]]; then
 	echo "Cloning cquery"
-	git clone https://github.com/cquery-project/cquery.git "$1"
+	git clone https://github.com/cquery-project/cquery.git --recursive "$1"
     fi
     cd "$1"
     update_git
