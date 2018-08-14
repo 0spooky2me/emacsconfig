@@ -1,8 +1,13 @@
 ;; init-company.el : Initialize and config company
 
-(eval-after-load 'company
-  '(add-to-list 'company-backends 'company-lsp))
-
-(add-hook 'after-init-hook 'global-company-mode)
+(use-package company
+  :ensure t
+  :commands global-company-mode
+  :hook (after-init . global-company-mode)
+  :config
+  (setq company-tooltip-align-annotations t
+	company-tooltip-limit 12
+	company-idle-delay .2
+	company-minimum-prefix-length 2))
 
 (provide 'init-company)
