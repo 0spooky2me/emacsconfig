@@ -8,9 +8,4 @@
 	      ("C-c C-f" . clang-format-region)
 	      ("C-c C-v" . clang-format-buffer)))
 
-;;(define-key c-mode-base-map (kbd "C-c C-f") 'clang-format-region)
-;;(define-key c-mode-base-map (kbd "C-c C-v") 'clang-format-buffer)
-
-;;(global-set-key (kbd "C-c C-f") 'clang-format-region)
-;;(global-set-key (kbd "C-c C-v") 'clang-format-buffer)
 (provide 'init-clang-format)

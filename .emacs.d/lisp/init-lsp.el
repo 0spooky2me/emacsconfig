@@ -1,5 +1,10 @@
 ;;; init-lsp.el : Initialize and cong Language Server Protocol modules
 
+(use-package lsp-mode
+  :ensure t
+  :config (use-package lsp-imenu)
+  :hook (lsp-after-open . lsp-enable-imenu))
+
 ;; Load and configure company-lsp backend
 (use-package company-lsp
   :ensure t
@@ -18,6 +23,7 @@
   :config
   (setq lsp-ui-sideline-enable nil
 	lsp-ui-imenu-enable nil
+	lsp-ui-peek-enable nil
 	lsp-ui-doc-include-signature t))
 
 (provide 'init-lsp)

@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (lsp-ui init-cquery-exec init-clang-format init-cquery init-company clang-format nyan-mode yasnippet use-package cquery company-lsp))))
+    (lsp-mode company lsp-ui init-cquery-exec init-clang-format init-cquery init-company clang-format nyan-mode yasnippet use-package cquery company-lsp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
