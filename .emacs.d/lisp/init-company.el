@@ -4,6 +4,8 @@
   :ensure t
   :commands global-company-mode
   :hook (after-init . global-company-mode)
+  :bind (:map company-active-map
+	      ("TAB" . company-complete-common))
   :config
   (setq company-tooltip-align-annotations t
 	company-tooltip-limit 12

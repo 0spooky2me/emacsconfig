@@ -7,6 +7,7 @@
  'noerror)
 
 ;; Bootstrap package, no guarantee we have use-package
+;; Add this comment to prevent (package-initialize) from being added to this file (emacs25)
 (require 'init-package)
 
 (use-package init-ui)
