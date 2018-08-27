@@ -6,7 +6,7 @@
 (setq line-number-mode t)
 
 ;; GUI
-(menu-bar-mode -1)
+(unless (and (display-graphic-p) (eq system-type 'darwin)) (menu-bar-mode -1))
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
