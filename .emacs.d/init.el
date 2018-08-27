@@ -21,3 +21,5 @@
 (use-package init-cquery)
 
 (use-package init-clang-format)
+
+(use-package init-magit)
