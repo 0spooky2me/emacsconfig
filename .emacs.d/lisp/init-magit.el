@@ -3,6 +3,7 @@
 (use-package magit
   :ensure t
   :config
+  (setq magit-log-section-commit-count 16)
   (setq magit-display-buffer-function
 	(lambda (buffer)
 	  (display-buffer

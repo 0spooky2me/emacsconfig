@@ -12,6 +12,8 @@
 
 (use-package init-ui)
 
+(use-package init-term)
+
 (use-package init-yasnippet)
 
 (use-package init-company)
