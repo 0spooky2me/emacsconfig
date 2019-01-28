@@ -1,5 +1,6 @@
 ;;; init-lsp.el : Initialize and cong Language Server Protocol modules
 
+;; Load LSP mode package, along with lsp-imenu
 (use-package lsp-mode
   :ensure t
   :config (use-package lsp-imenu)
