@@ -15,6 +15,24 @@
 (tool-bar-mode -1)
 ;; Disable scroll bar
 (scroll-bar-mode -1)
+;; Show time in the mode line without load average
+(setq display-time-default-load-average nil
+      display-time-24hr-format 1)
+(display-time-mode 1)
+;; Smart mode line
+(use-package smart-mode-line
+  :ensure t
+  :config
+  (setq sml/theme 'respectful
+	sml/name-width 24)
+  (sml/setup))
+
+;;; Theming
+;; Use pseudo Google material theme
+(use-package doneburn-theme
+  :ensure t
+  :config
+  (load-theme 'doneburn t))
 
 ;;; Misc
 ;; Remove the startup screen
