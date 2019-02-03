@@ -25,10 +25,12 @@
 (use-package init-company)
 
 ;; Load LSP modules and configuration
-(use-package init-lsp)
+;; TODO: Current LSP config was deprecated.  Need to redo
+;; (use-package init-lsp)
 
 ;; Load CQuery backend and configuration
-(use-package init-cquery)
+;; TODO: Current LSP config was deprecated.  Need to redo
+;;(use-package init-cquery)
 
 ;; Load clang-format and configuration
 (use-package init-clang-format)
