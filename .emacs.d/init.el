@@ -15,6 +15,9 @@
 ;; Load simple UI tweaks
 (use-package init-ui)
 
+;; Load org-mode configuration
+(use-package init-org)
+
 ;; Load term package and configuration
 (use-package init-term)
 
