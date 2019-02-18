@@ -3,28 +3,29 @@
 ;; Load LSP mode package, along with lsp-imenu
 (use-package lsp-mode
   :ensure t
-  :config (use-package lsp-imenu)
-  :hook (lsp-after-open . lsp-enable-imenu))
+  :commands lsp
+  :init
+  (setq lsp-auto-guess-root t)
+  :hook
+  ((c-mode c++-mode objc-mode) . lsp)
+  :config
+  (require 'lsp-clients))
 
 ;; Load and configure company-lsp backend
 (use-package company-lsp
   :ensure t
   :after company
-  :defines company-backends
-  :init (push 'company-lsp company-backends)
+  :commands company-lsp
   :config
+  (push 'company-lsp company-backends)
   (setq company-lsp-cache-candidates nil
 	company-lsp-enable-recompletion t))
 
 ;; Load and configure UI elements for LSP, currently only Flycheck and Docs
 (use-package lsp-ui
   :ensure t
-  :hook ((lsp-mode . lsp-ui-mode)
-	 (lsp-mode . flycheck-mode))
   :config
-  (setq lsp-ui-sideline-enable nil
-	lsp-ui-imenu-enable nil
-	lsp-ui-peek-enable nil
+  (setq lsp-eldoc-render-all t
 	lsp-ui-doc-include-signature t))
 
 (provide 'init-lsp)

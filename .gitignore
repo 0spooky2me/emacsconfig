@@ -1,2 +1,2 @@
-cquery_location.txt
-.emacs.d/lisp/init-cquery-exec.el
+language_server_location.txt
+.emacs.d/lisp/init-ccls-exec.el
