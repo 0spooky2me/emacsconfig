@@ -5,7 +5,8 @@
   :ensure t
   :commands lsp
   :init
-  (setq lsp-auto-guess-root t)
+  (setq lsp-auto-guess-root t
+	lsp-prefer-flymake nil)
   :hook
   ((c-mode c++-mode objc-mode) . lsp)
   :config

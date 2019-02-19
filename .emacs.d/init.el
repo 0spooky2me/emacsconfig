@@ -1,5 +1,8 @@
-;; configure custom settings
+;;; init.el --- Configure Kevin's Emacs settings
 
+;;; Commentary:
+
+;;; Code:
 ;; Add subdirectory ./lisp/ to our load path, so we can (use-package [file])
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
@@ -24,6 +27,9 @@
 ;; Load yasnippet and configuration
 (use-package init-yasnippet)
 
+;; Load flycheck and configuration
+(use-package init-flycheck)
+
 ;; Load company mode and configuration
 (use-package init-company)
 
@@ -38,3 +44,4 @@
 
 ;; Load magit and configuration
 (use-package init-magit)
+;;; init.el ends here

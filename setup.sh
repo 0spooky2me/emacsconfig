@@ -26,8 +26,10 @@ ask_clean_git() {
 
 # Symlink .emacs.d directory to user home
 link_emacs_d() {
-    # Force change target if it exists
-    ln -sfT "$CONFIG_LOCATION/.emacs.d" "$HOME/.emacs.d"
+    # Remove old symlink if it exists and replace.
+    # We can't use ln -sfT ... because MacOS ln does not support it!
+    rm -f "$HOME/.emacs.d"
+    ln -s "$CONFIG_LOCATION/.emacs.d" "$HOME/.emacs.d"
 }
 
 # Prepare repository
