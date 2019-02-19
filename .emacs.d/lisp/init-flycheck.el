@@ -9,5 +9,5 @@
   :config
   (global-flycheck-mode))
 
-(provide 'init-flycheck.el)
+(provide 'init-flycheck)
 ;;; init-flycheck.el ends here
