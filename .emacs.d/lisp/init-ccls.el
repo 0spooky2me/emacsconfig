@@ -13,7 +13,7 @@
   ;; ccls configuration:
   ;; comments 2: This means treat all comments as documentation
   ;; detailedLabel t: This means show the full signature of the candidate
-  (setq cquery-initialization-options
+  (setq ccls-initialization-options
 	'(:index (:comments 2) :completion (:detailedLabel t))))
 
 (provide 'init-ccls)

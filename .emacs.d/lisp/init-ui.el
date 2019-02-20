@@ -1,4 +1,8 @@
-;;; init-ui.el : Configure universal UI preferences
+;;; init-ui.el --- Configure universal UI preferences
+
+;;; Commentary:
+
+;;; Code:
 
 ;;; Numbering
 ;; I like 100 characters per line.
@@ -39,5 +43,8 @@
 (setq inhibit-startup-screen t)
 ;; Highlight paired parentheses.
 (show-paren-mode t)
+;; Enable windmove
+(windmove-default-keybindings)
 
 (provide 'init-ui)
+;;; init-ui.el ends here
