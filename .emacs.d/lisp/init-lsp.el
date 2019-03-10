@@ -32,12 +32,14 @@
 ;; Load and configure UI elements for LSP, disable most of sideline
 (use-package lsp-ui
   :ensure t
+  :bind
+  (:map lsp-ui-mode-map
+	(([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
+	 ([remap xref-find-references] . lsp-ui-peek-find-references)))
   :config
   ;; Config docs
   (setq lsp-eldoc-render-all t
 	lsp-ui-doc-include-signature t)
-  ;; Config peek
-  (setq lsp-ui-peek-always-show t)
   ;; Config sideline
   (setq lsp-ui-sideline-show-code-actions nil
 	lsp-ui-sideline-show-hover nil))

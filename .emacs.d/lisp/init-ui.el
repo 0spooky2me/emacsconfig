@@ -32,7 +32,6 @@
   (sml/setup))
 
 ;;; Theming
-;; Use pseudo Google material theme
 (use-package doneburn-theme
   :ensure t
   :config
