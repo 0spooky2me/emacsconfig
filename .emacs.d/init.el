@@ -24,6 +24,9 @@
 ;; Load term package and configuration
 (use-package init-term)
 
+;; Load web-mode and configuration
+(use-package init-web-mode)
+
 ;; Load yasnippet and configuration
 (use-package init-yasnippet)
 
