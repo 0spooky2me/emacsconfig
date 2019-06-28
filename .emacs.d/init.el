@@ -18,6 +18,9 @@
 ;; Load simple UI tweaks
 (use-package init-ui)
 
+;; Load expand-region configuration
+(use-package init-expand-region)
+
 ;; Load org-mode configuration
 (use-package init-org)
 
