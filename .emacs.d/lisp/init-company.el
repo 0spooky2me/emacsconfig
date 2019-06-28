@@ -3,6 +3,7 @@
 ;; Always automatically load company mode
 (use-package company
   :ensure t
+  :diminish company-mode
   :commands global-company-mode
   :hook (after-init . global-company-mode)
   ;; Set tab to finish auto-completion

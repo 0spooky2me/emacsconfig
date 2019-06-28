@@ -15,6 +15,10 @@
 ;; Add this comment to prevent (package-initialize) from being added to this file (emacs25)
 (require 'init-package)
 
+;; Load diminish configuration
+;; Load this right after init-package so diminsh can be used for all use-package declarations
+(use-package init-diminish)
+
 ;; Load simple UI tweaks
 (use-package init-ui)
 
