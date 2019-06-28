@@ -6,7 +6,11 @@
   ;; Magit configuration:
   ;; Set commit log to show 16 older commits
   ;; Unless showing process, revision, diff, stash, or status, open new buffers in the same window.
-  (setq magit-log-section-commit-count 16)
+  (setq magit-log-section-commit-count 16
+	magit-diff-paint-whitespace t
+	magit-diff-paint-whitespace-lines (quote all)
+	magit-diff-highlight-trailing t)
+
   (setq magit-display-buffer-function
 	(lambda (buffer)
 	  (display-buffer

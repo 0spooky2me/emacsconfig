@@ -19,6 +19,11 @@
 (tool-bar-mode -1)
 ;; Disable scroll bar
 (scroll-bar-mode -1)
+;; Make frame title useful
+(setq frame-title-format
+      '(buffer-file-name
+	"%f"
+	(dired-directory dired-directory "%b")))
 ;; Show time in the mode line without load average
 (setq display-time-default-load-average nil
       display-time-24hr-format 1)
