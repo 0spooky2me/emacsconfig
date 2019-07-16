@@ -1,7 +1,12 @@
 ;; init-clang-format.el : Initialise clang-format for cc-mode
 
 ;; We must have CC mode (mode for editing C, C++, Java, etc.) in order to access c-mode-base-map
-(use-package cc-mode)
+
+(use-package cc-mode
+  :ensure t
+  :config
+  (setq-default tab-width 4)
+  (defvaralias 'c-basic-offset 'tab-width))
 
 ;; Just add hotkeys for clang-format to the c-mode-base-map
 (use-package clang-format

@@ -4,54 +4,31 @@
 
 ;;; Code:
 ;; Add subdirectory ./lisp/ to our load path, so we can (use-package [file])
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(let ((default-directory  "~/.emacs.d/lisp/"))
+  (normal-top-level-add-to-load-path '("meta-packages"
+									   "mode-packages"
+									   "backend-packages"
+									   "frontend-packages"
+									   "ui-packages")))
 
 ;; Before loading anything else, load our custom settings so Emacs is happy
 (load
  (setq custom-file (expand-file-name "settings/custom.el" user-emacs-directory))
  'noerror)
 
-;; Bootstrap package, no guarantee we have use-package.  We need use-package to auto-load packages we don't have.
-;; Add this comment to prevent (package-initialize) from being added to this file (emacs25)
-(require 'init-package)
+;; Load meta-packages; packages other packages depend on
+;; Note: Must be bootstrapped because use-package is unavailable at this point
+(require 'init-meta-packages)
 
-;; Load diminish configuration
-;; Load this right after init-package so diminsh can be used for all use-package declarations
-(use-package init-diminish)
+;; Load mode-packages; packages for installing/configuring specific modes
+(use-package init-mode-packages)
+
+;; Load backend-packages; packages which provide non-ui support for editing
+(use-package init-backend-packages)
+
+;; Load frontend-packages; packages which provide ui support for editing
+(use-package init-frontend-packages)
 
 ;; Load simple UI tweaks
-(use-package init-ui)
-
-;; Load expand-region configuration
-(use-package init-expand-region)
-
-;; Load org-mode configuration
-(use-package init-org)
-
-;; Load term package and configuration
-(use-package init-term)
-
-;; Load web-mode and configuration
-(use-package init-web-mode)
-
-;; Load yasnippet and configuration
-(use-package init-yasnippet)
-
-;; Load flycheck and configuration
-(use-package init-flycheck)
-
-;; Load company mode and configuration
-(use-package init-company)
-
-;; Load LSP modules and configuration
-(use-package init-lsp)
-
-;; Load CCLS backend and configuration
-(use-package init-ccls)
-
-;; Load clang-format and configuration
-(use-package init-clang-format)
-
-;; Load magit and configuration
-(use-package init-magit)
+(use-package init-ui-packages)
 ;;; init.el ends here

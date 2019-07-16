@@ -13,7 +13,7 @@
   :commands lsp
   :init
   (setq lsp-auto-guess-root t
-	lsp-prefer-flymake nil)
+		lsp-prefer-flymake nil)
   :hook
   ((c-mode c++-mode objc-mode) . lsp)
   :config
@@ -27,22 +27,22 @@
   :config
   (push 'company-lsp company-backends)
   (setq company-lsp-cache-candidates nil
-	company-lsp-enable-recompletion t))
+		company-lsp-enable-recompletion t))
 
 ;; Load and configure UI elements for LSP, disable most of sideline
 (use-package lsp-ui
   :ensure t
   :bind
   (:map lsp-ui-mode-map
-	(([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
-	 ([remap xref-find-references] . lsp-ui-peek-find-references)))
+		(([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
+		 ([remap xref-find-references] . lsp-ui-peek-find-references)))
   :config
   ;; Config docs
   (setq lsp-eldoc-render-all t
-	lsp-ui-doc-include-signature t)
+		lsp-ui-doc-include-signature t)
   ;; Config sideline
   (setq lsp-ui-sideline-show-code-actions nil
-	lsp-ui-sideline-show-hover nil))
+		lsp-ui-sideline-show-hover nil))
 
 (provide 'init-lsp)
 ;;; init-lsp.el ends here
