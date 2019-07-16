@@ -5,12 +5,11 @@
 ;; Packages should providing editing support and not just ui tweaks
 
 ;;; Code:
-
-;; Load SmartTabs configuration
-(use-package init-smart-tabs)
-
 ;; Load expand-region configuration
 (use-package init-expand-region)
+
+;; Load smart tabs mode and configuration
+(use-package init-smart-tabs-mode)
 
 ;; Load flycheck and configuration
 (use-package init-flycheck)

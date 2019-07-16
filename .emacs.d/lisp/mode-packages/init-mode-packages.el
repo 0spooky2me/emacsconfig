@@ -16,5 +16,8 @@
 ;; Load magit and configuration
 (use-package init-magit)
 
+;; Load cc-mode configuration
+(use-package init-cc-mode)
+
 (provide 'init-mode-packages)
 ;;; init-mode-packages.el ends here
