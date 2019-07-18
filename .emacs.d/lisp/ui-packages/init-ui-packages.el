@@ -25,8 +25,9 @@
 	"%f"
 	(dired-directory dired-directory "%b")))
 ;; Show time in the mode line without load average
-(setq display-time-default-load-average nil
-      display-time-24hr-format 1)
+(setq-default display-time-default-load-average nil
+			  display-time-format "%H:%M:%S"
+			  display-time-interval 1)
 (display-time-mode 1)
 ;; Smart mode line
 (use-package smart-mode-line
