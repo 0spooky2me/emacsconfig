@@ -17,5 +17,8 @@
 ;; Load company mode and configuration
 (use-package init-company)
 
+;; Load clang-format and configuration
+(use-package init-clang-format)
+
 (provide 'init-frontend-packages)
 ;;; init-frontend-packages.el ends here

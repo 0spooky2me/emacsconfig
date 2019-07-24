@@ -64,7 +64,7 @@ clone_build_language_server() {
 # Generate init-ccls-exec.el as it will have user dependent info
 # param in $1: language server directory
 generate_user_language_server_el() {
-    language_server_exec_location="$CONFIG_LOCATION/.emacs.d/lisp/init-ccls-exec.el"
+    language_server_exec_location="$CONFIG_LOCATION/.emacs.d/lisp/backend-packages/init-ccls-exec.el"
     cat "$CONFIG_LOCATION/init-ccls-exec-template.el" > "$language_server_exec_location"
     echo "(setq ccls-executable \"$1/Release/ccls\")" >> "$language_server_exec_location"
     echo "(provide 'init-ccls-exec)" >> "$language_server_exec_location"

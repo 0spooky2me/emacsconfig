@@ -11,8 +11,5 @@
 ;; Load LSP modules and configuration
 (use-package init-lsp)
 
-;; Load clang-format and configuration
-(use-package init-clang-format)
-
 (provide 'init-backend-packages)
 ;;; init-backend-packages.el ends here
