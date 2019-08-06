@@ -2,6 +2,7 @@
 
 ;; Term is used for ansi-term as well and is always provided.
 (use-package term
+  :hook (term-mode . compilation-shell-minor-mode)
   :config
   ;; Set term-buffer-maximum-size to 0 for infinite terminal buffer
   (setq term-buffer-maximum-size 0))
