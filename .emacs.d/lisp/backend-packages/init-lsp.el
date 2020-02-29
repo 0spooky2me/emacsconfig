@@ -12,8 +12,7 @@
   :ensure t
   :commands lsp
   :init
-  (setq lsp-auto-guess-root t
-		lsp-prefer-flymake nil)
+  (setq lsp-auto-guess-root t)
   :hook
   ((c-mode c++-mode objc-mode) . lsp)
   :config
@@ -38,11 +37,12 @@
 		 ([remap xref-find-references] . lsp-ui-peek-find-references)))
   :config
   ;; Config docs
-  (setq lsp-eldoc-render-all t
-		lsp-ui-doc-include-signature t)
+  (setq
+   lsp-eldoc-render-all t
+   lsp-ui-doc-include-signature t
+   lsp-ui-doc-position 'top)
   ;; Config sideline
-  (setq lsp-ui-sideline-show-code-actions nil
-		lsp-ui-sideline-show-hover nil))
+  (setq lsp-ui-sideline-show-code-actions nil))
 
 (provide 'init-lsp)
 ;;; init-lsp.el ends here

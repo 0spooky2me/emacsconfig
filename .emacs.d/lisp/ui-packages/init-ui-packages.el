@@ -50,6 +50,11 @@
 (show-paren-mode t)
 ;; Enable windmove
 (windmove-default-keybindings)
+;; Enable framemove
+(use-package framemove
+  :config
+  (setq framemove-hook-into-windmove t))
+
 
 (provide 'init-ui-packages)
 ;;; init-ui-packages.el ends here

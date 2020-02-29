@@ -15,7 +15,8 @@
   ;; completion.detailedLabel t: This means show the full signature of the candidate
   ;; request.timeout 30000: Increase time for indexing for big projects.  I can wait!
   (setq ccls-initialization-options
-	'(:index (:comments 2)
+	'(:index (:comments 2
+			  :threads 10)
 	  :completion (:detailedLabel t)
 	  :request (:timeout 30000))))
 
