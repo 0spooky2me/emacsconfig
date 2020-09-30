@@ -41,18 +41,19 @@ clone_build_language_server() {
 	git clone https://github.com/MaskRay/ccls --recursive --depth=1 "$1"
     fi
     cd "$1"
+	git fetch --all --tags
     git pull origin master
-    
+	git checkout tags/0.20190823.6
+
     local cmake_flags="-H. -BRelease"
     if [[ "$OSTYPE" = "darwin"* ]]; then
 	cmake_flags="$cmake_flags \
                      -DCMAKE_PREFIX_PATH=/usr/local/opt/llvm/"
     elif [[ "$OSTYPE" = "linux-gnu" ]]; then
 	cmake_flags="$cmake_flags \
-                     -DCMAKE_PREFIX_PATH=/usr/lib/llvm-7/ \
-                     -DLLVM_INCLUDE_DIR=/usr/lib/llvm-7/include/ \
-                     -DLLVM_BUILD_INCLUDE_DIR=/usr/include/llvm-7/ \
-                     -DLLVM_ENABLE_RTTI=on"
+                     -DCMAKE_PREFIX_PATH=/usr/lib/llvm-10/ \
+                     -DLLVM_INCLUDE_DIR=/usr/lib/llvm-10/include/ \
+                     -DLLVM_BUILD_INCLUDE_DIR=/usr/include/llvm-10/"
     else
 	echo "Error! I don't know the cmake flags for this OS"
 	exit 1
