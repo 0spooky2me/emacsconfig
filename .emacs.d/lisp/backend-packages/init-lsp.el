@@ -15,7 +15,7 @@
   ((c-mode c++-mode objc-mode) . lsp)
   :config
   (setq gc-cons-threshold (* 100 1000 1000)
-		read-process-output-max (* 1024	1024))
+		read-process-output-max (* 1024	1024)))
 
 ;; Load and configure UI elements for LSP, disable most of sideline
 (use-package lsp-ui
