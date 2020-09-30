@@ -1,2 +1,2 @@
 language_server_location.txt
-.emacs.d/lisp/init-ccls-exec.el
+.emacs.d/lisp/backend-packages/init-ccls-exec.el
