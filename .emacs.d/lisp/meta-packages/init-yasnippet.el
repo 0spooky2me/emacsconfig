@@ -1,6 +1,9 @@
-;;; init-yasnippet.el ; Initialize and config yasnippet
+;;; init-yasnippet.el --- Initialize and config yasnippet
+
+;;; Commentary:
 
 ;; For use with company-mode.
+;;; Code:
 (use-package yasnippet
   :ensure t
   :diminish yas-minor-mode
@@ -11,3 +14,4 @@
   :ensure t)
 
 (provide 'init-yasnippet)
+;;; init-yasnippet.el ends here

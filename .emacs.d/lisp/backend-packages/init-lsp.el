@@ -11,22 +11,11 @@
 (use-package lsp-mode
   :ensure t
   :commands lsp
-  :init
-  (setq lsp-auto-guess-root t)
   :hook
   ((c-mode c++-mode objc-mode) . lsp)
   :config
-  (require 'lsp-clients))
-
-;; Load and configure company-lsp backend for company-mode
-(use-package company-lsp
-  :ensure t
-  :after company
-  :commands company-lsp
-  :config
-  (push 'company-lsp company-backends)
-  (setq company-lsp-cache-candidates nil
-		company-lsp-enable-recompletion t))
+  (setq gc-cons-threshold (* 100 1000 1000)
+		read-process-output-max (* 1024	1024))
 
 ;; Load and configure UI elements for LSP, disable most of sideline
 (use-package lsp-ui
