@@ -43,7 +43,7 @@ clone_build_language_server() {
     cd "$1"
 	git fetch --all --tags
     git pull origin master
-	git checkout tags/0.20190823.6
+	git checkout tags/0.20201219
 
     local cmake_flags="-H. -BRelease"
     if [[ "$OSTYPE" = "darwin"* ]]; then
