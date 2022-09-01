@@ -41,9 +41,9 @@ clone_build_language_server() {
 	git clone https://github.com/MaskRay/ccls --recursive --depth=1 "$1"
     fi
     cd "$1"
-	git fetch --all --tags
+    git fetch --all --tags
     git pull origin master
-	git checkout tags/0.20210330
+    git checkout tags/0.20220729
 
     local cmake_flags="-H. -BRelease"
     if [[ "$OSTYPE" = "darwin"* ]]; then
