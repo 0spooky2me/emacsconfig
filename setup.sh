@@ -28,7 +28,7 @@ ask_clean_git() {
 link_emacs_d() {
     # Remove old symlink if it exists and replace.
     # We can't use ln -sfT ... because MacOS ln does not support it!
-    rm -f "$HOME/.emacs.d"
+    rm -rf "$HOME/.emacs.d"
     ln -s "$CONFIG_LOCATION/.emacs.d" "$HOME/.emacs.d"
 }
 
